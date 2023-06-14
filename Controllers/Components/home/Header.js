@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
-import { firebase } from '../../../firebase'
+import { firebase } from '../../firebase'
 
 const handleSignout = async () => {
   try {
@@ -14,7 +14,7 @@ const handleSignout = async () => {
 const Header = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={handleSignout} >
+        <TouchableOpacity onPress={handleSignout} >
         <Image
           style={styles.tinyLogo}
           source={{
@@ -24,7 +24,7 @@ const Header = ({ navigation }) => {
       </TouchableOpacity>
 
       <View style={styles.iconsContainer}>
-        <TouchableOpacity onPress={() => navigation.push('NewPostScreen')}>
+      <TouchableOpacity onPress={() => navigation.push('NewPostScreen')}>
           <Image
             style={styles.icon}
             source={{
@@ -88,11 +88,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 100,
-  },
+  }, 
   unreadBadgeText: {
-    color: 'white',
+    color: 'white', 
     fontWeigth: '600',
-  },
+  }, 
 })
 
 export default Header

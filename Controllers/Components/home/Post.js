@@ -1,7 +1,7 @@
 import { Divider } from '@rneui/base';
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { firebase, db } from '../../../firebase'
+import { firebase, db } from '../../firebase'
 
 const postFooterIcons = [
     {
@@ -49,7 +49,7 @@ const Post = ({ post }) => {
             <PostHeader post={post} />
             <PostImage post={post} />
             <View style={{ marginHorizontal: 15, marginTop: 10 }}>
-                <PostFooter post={post} handleLike={handleLike} />
+            <PostFooter post={post} handleLike={handleLike} />
                 <Likes post={post} />
                 <Caption post={post} />
                 <CommentsSection post={post} />
@@ -92,7 +92,7 @@ const PostImage = ({ post }) => (
 const PostFooter = ({ handleLike, post }) => (
     <View style={{ flexDirection: 'row' }}>
         <View style={styles.leftFooterIconsContainer}>
-            <TouchableOpacity onPress={() => handleLike(post)}>
+        <TouchableOpacity onPress={() => handleLike(post)}>
                 <Image style={styles.footerIcon} source={{ uri: post.likes_by_users.includes(firebase.auth().currentUser.email) ? postFooterIcons[0].LikedImageUrl : postFooterIcons[0].imageUrl }} />
             </TouchableOpacity>
             <Icon imgStyle={styles.footerIcon} imgUrl={postFooterIcons[1].imageUrl} />
@@ -114,7 +114,7 @@ const Icon = ({ imgStyle, imgUrl }) => (
 const Likes = ({ post }) => (
     <View style={{ flexDirection: 'row', marginTop: 4 }}>
         <Text style={{ fontWeight: '600', color: 'black' }}>
-            {post.likes_by_users.length.toLocaleString('en')} likes
+        {post.likes_by_users.length.toLocaleString('en')} likes
         </Text>
     </View>
 )

@@ -1,9 +1,9 @@
-import { View, Text, TextInput, StyleSheet, Pressable, TouchableOpacity, Alert } from 'react-native'
+import { View, Text, TextInput, StyleSheet, Pressable, TouchableOpacity, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native'
 import React, { useState } from 'react'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 import Validator from 'email-validator'
-import { firebase, db } from '../../../firebase'
+import { firebase, db } from '../../firebase'
 
 const SignupForm = ({ navigation }) => {
 
@@ -36,6 +36,7 @@ const SignupForm = ({ navigation }) => {
   }
 
   return (
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
     <View style={styles.wrapper}>
       <Formik
         initialValues={{ email: '', username: '', password: '' }}
@@ -121,6 +122,7 @@ const SignupForm = ({ navigation }) => {
         )}
       </Formik>
     </View>
+    </TouchableWithoutFeedback>
   )
 }
 
