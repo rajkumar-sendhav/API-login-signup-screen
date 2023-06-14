@@ -1,7 +1,14 @@
+import React from 'react';
 import 'react-native-gesture-handler';
-import React from "react";
-import AuthNavigation from './AuthNavigation';
+import { View, Text } from 'react-native';
+import NavigationScreen from './controllers/screens/NavigationScreen';
 
-export default function App() {
-  return <AuthNavigation />
-}
+const App = () => {
+  return (
+    <View style={{ flex: 1 }}>
+      <NavigationScreen />
+    </View>
+  );
+};
+
+export default App;
